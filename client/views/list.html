@@ -1,0 +1,33 @@
+<template name="list">
+	{{> navbar }}
+	
+	{{#if currentUser}}
+	<div class="container-fluid" id="container-list">
+	
+		<div id="main-list" class="row">
+			<div id="content-list" class="col-md-2 visible-md visible-lg">
+			</div>
+			<div id="content-list" class="col-md-8">
+
+				{{# with list}}
+					{{> listName}}
+				{{/with}}
+		
+				{{# with list}}
+					{{> listOptions}}
+				{{/with}}
+
+				{{# with list}}
+					{{> tasks }}
+				{{/with}}
+
+
+			</div>
+			<div id="content-list" class="col-md-2 visible-md visible-lg">
+			</div>
+		</div>
+	
+	</div>
+	{{/if}}
+	
+</template>

@@ -1,0 +1,184 @@
+.icon-white {
+  color: #fff;
+}
+
+.icon-not-set {
+  opacity: 0.2;
+}
+
+body {
+	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+input:focus {
+	outline: none;
+}
+
+#home {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+/* ######### Navbar */
+.navbar-wrapper {
+/* 	background: transparent; */
+	background-color: rgba(100,100,100,0.4);
+}
+
+.navbar-wrapper .container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+	
+}
+
+/* 
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 70%;
+}
+ */
+
+
+.navbar-brand {
+/* 	float:none; */
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 20px;
+	letter-spacing: .15em;
+}
+
+a.navbar-brand {
+	color: #ffffff !important;
+/* 	background-color: rgba(100,100,100,0.4); */
+	border-radius:3px;
+}
+
+.navbar-header ul.nav {
+	float: left;
+}
+.navbar-header ul.nav li {
+	margin-left: 2px;
+	margin-right: 2px;
+	float: left;
+}
+
+.navbar-right#nav-login {
+	margin-right: 15px;
+}
+
+.navbar-right#nav-notifications {
+	margin-right: 0px;
+}
+
+
+#login-dropdown-list a.dropdown-toggle {
+	color: #dedede;
+	font-weight: 500;
+	font-size: 16px;
+ 	letter-spacing: .05em; 
+}
+
+#login-dropdown-list a.dropdown-toggle:hover {
+	color: #ffffff;
+}
+
+/* ####### Home page with parallax scrolling */
+#title h1 {
+	font-size: 8vh;
+}
+
+#title h4 {
+	font-size: 3h;
+	margin-top: 50px;
+}
+
+
+.slide {
+	position: relative;
+	padding: 25vh 10%;
+	min-height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+	box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+}
+
+.slide:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.slide, .slide:before {
+	background: 50% 50% / cover;  
+}
+
+.header {
+	text-align: center;
+	color: #fff;
+}
+
+#title {
+	background-image: url('/158414-scricks.jpg');
+	background-attachment: fixed;  
+}
+
+#slide1:before {
+	background-image: url('/notebook_@2X.png');
+	transform: translateZ(-1px) scale(2);
+	z-index:-1;
+}
+
+#slide2:before {
+	background-image: url('/notebook_@2X.png');
+	transform: translateZ(-1px) scale(2);
+	z-index:-1;
+}
+
+.features .feature-item .feature-item-content .descr-title {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 4vh;
+	letter-spacing: .15em;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+}
+
+.features .feature-item .feature-item-content .descr-content {
+	font-weight: 200;
+	font-size: 3.5vh;
+}
+
+
+.features .feature-item .feature-item-content img{
+	width: 80px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.contact-us {
+	text-align: center;
+}
+
+.contact-us div {
+	background-color: rgba(100,100,100,0.4);
+	line-height: 45px;
+}
+
+.contact-us a {
+	color: #ffffff !important;
+	letter-spacing: .15em;
+}
+
+.input-error {
+	border-color: red;
+}

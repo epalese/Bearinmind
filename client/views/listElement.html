@@ -1,0 +1,23 @@
+<template name="listElement">
+	<div class="col-md-3">
+		<div class="list-tile" data-address="{{pathFor 'list'}}" data-list-id="{{_id}}" 
+			id="list_{{_id}}"
+			data-overall-status="{{overallStatus}}">
+			<div class="list-tile-content">
+				<div class="list-tile-name">{{name}}</div>
+				<div class="list-tile-user-icons">
+					{{#if isListOwner}}
+						<div class="glyphicon glyphicon-user icon-black owner" ></div>
+					{{else}}
+						<div class="glyphicon glyphicon-user icon-black not-owner" ></div>
+					{{/if}}
+					<div class="owner-email">{{ownerEmail}}</div>
+				</div>
+				<div class="list-tile-sharing-icons">
+					<div class="glyphicon glyphicon-eye-open icon-black owner" ></div>
+					<div class="sharing-people">{{sharingPeople}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

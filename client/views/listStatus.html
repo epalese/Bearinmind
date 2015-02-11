@@ -1,0 +1,34 @@
+<template name="listStatus">
+	{{> navbar }}
+	
+	<div class="container-fluid" id="container-list">
+		
+		{{#if currentUser}}
+		<div id="main-list" class="row">
+			<div id="content-list" class="col-md-2 visible-md visible-lg">
+			</div>
+			<div id="content-list" class="col-md-8">
+
+				<div data-list-status="{{overallStatus}}" class="list-name row {{overallStatusStyle}}">
+					<input name="list-name" type="text" value="{{name}}" 
+						placeholder="Please write the list name"
+						readonly>
+				</div>
+	
+				<div class="list-name-icons row">
+				</div>
+				
+				<div class="task-list row">
+					{{#each tasks}}
+						{{> task}}
+					{{/each}}
+				</div>
+				
+			</div>
+			<div id="content-list" class="col-md-2 visible-md visible-lg">
+			</div>
+		</div>
+		{{/if}}
+	</div>
+	
+</template>

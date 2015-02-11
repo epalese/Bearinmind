@@ -1,0 +1,234 @@
+<template name="navbar">
+	<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			{{#if currentUser}}
+				{{#if section 'lists'}}
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span> New List
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+					
+				</div>
+				{{/if}}
+				
+				{{#if section 'listsStatus'}}
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span> New List
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+					
+				</div>
+				{{/if}}
+				
+				{{#if section 'listsDate'}}
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span> New List
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" id="new-list-btn">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+					
+				</div>
+				{{/if}}
+				
+				
+				{{#if section 'tasks'}}
+				<div class="navbar-header">
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" 
+							id="back-lists-btn" data-address="{{pathFor 'lists'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span> Lists
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" 
+								id="back-lists-btn" data-address="{{pathFor 'lists'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" 
+								id="new-task-btn">
+								<span class="glyphicon glyphicon-plus"></span> New Task
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" 
+								id="new-task-btn">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg"
+								id="remove-list-btn" data-address="{{pathFor 'lists'}}" disabled={{cannotModifyList}}>
+								<span class="glyphicon glyphicon-trash"></span> Remove List
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" 
+								id="remove-list-btn" data-address="{{pathFor 'lists'}}" disabled={{cannotModifyList}}>
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+						</li>
+					</ul>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-2">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+				</div>
+				{{/if}}
+				
+				{{#if section 'tasksStatus'}}
+				<div class="navbar-header">
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" 
+							id="back-lists-btn" data-address="{{pathFor 'listsStatus'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span> Lists
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" 
+								id="back-lists-btn" data-address="{{pathFor 'listsStatus'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+							</button>
+						</li>
+					</ul>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-2">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+				</div>
+				{{/if}}
+				
+				{{#if section 'tasksDate'}}
+				<div class="navbar-header">
+					<a class="navbar-brand visible-md visible-lg" href="/">Bear in mind</a>
+					<a class="navbar-brand visible-xs visible-sm" href="/">BiM</a>
+					<ul class="nav navbar-left">
+						<li>
+							<button type="button" class="navbar-btn btn btn-primary visible-md visible-lg" 
+							id="back-lists-btn" data-address="{{pathFor 'listsDate'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span> Lists
+							</button>
+							<button type="button" class="navbar-btn btn btn-primary visible-xs visible-sm" 
+								id="back-lists-btn" data-address="{{pathFor 'listsStatus'}}">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+							</button>
+						</li>
+					</ul>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" 
+							data-target="#bs-example-navbar-collapse-2">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+					<ul class="nav navbar-nav navbar-right" id="nav-login">
+						{{> loginButtons}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="nav-notifications">
+						<li>{{> notifications}}</li>
+					</ul>
+				</div>
+				{{/if}}
+			{{/if}}
+			
+			
+		</div>
+	</nav>
+</template>

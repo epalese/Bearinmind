@@ -1,0 +1,85 @@
+<template name="listOptions">
+	<div class="list-options-outer-container row">
+		<div class="col-md-12">
+			<button type="button" id="sharing-button" 
+				class="btn btn-default btn-sm " data-toggle="collapse" data-target="#sharing-people">
+				<div class='title'>
+					<span class="glyphicon glyphicon-eye-open icon-black" ></span>
+					<span>Sharing</span>
+					<span>({{sharingPeople}})</span>
+				</div>
+			</button>
+			<button type="button" id="properties-button" 
+				class="btn btn-default btn-sm " data-toggle="collapse" data-target="#list-properties">
+				<div class='title'>
+					<span class="glyphicon glyphicon-eye-open icon-black" ></span>
+					<span>Properties</span>
+				</div>
+			</button>
+		</div>
+		<div id="sharing-people" class="collapse out col-md-12 list-options-inner-container">
+			<div class="add-sharing row">
+				<input name="sharing-email" type="text" value="" 
+					data-task-id="{{_id}}" placeholder="email address" 
+					class="new-friend-email"
+					disabled="{{cannotModify}}" >
+				<button type="submit" id="sharing-btn"
+					class="btn btn-primary btn-sm btn-sharing-list" 
+					data-address="{{pathFor 'lists'}}" 
+					disabled="{{cannotModify}}">Share
+				</button>
+			</div>
+			
+			<div class="sharing-list row" data-parent-list-id="{{_id}}">
+				{{#if cannotModify}}
+					{{#each persons}}
+						{{#if this.exist}}
+							{{#if this.iam}}
+								<span class="label label-success friend-email">
+									<span class="glyphicon glyphicon-remove icon-black"></span>
+									<span class="user-email">{{this.email}}</span>
+								</span>
+							{{else}}
+								<span class="label label-success friend-email">
+									<span class=""></span>
+									<span class="user-email">{{this.email}}</span>
+								</span>
+							{{/if}}
+						{{else}}
+							<span class="label label-warning friend-email">
+								<span class=""></span>
+								<span class="user-email">{{this.email}}</span>
+							</span>
+						{{/if}}
+					{{/each}}
+				{{else}}
+					{{#each persons}}
+						{{#if this.exist}}
+							{{#if this.iam}}
+								<span class="label label-success friend-email">
+									<span class=""></span>
+									<span class="user-email">{{this.email}}</span>
+								</span>
+							{{else}}
+								<span class="label label-success friend-email">
+									<span class="glyphicon glyphicon-remove icon-black"></span>
+									<span class="user-email">{{this.email}}</span>
+								</span>
+							{{/if}}
+						{{else}}
+							<span class="label label-warning friend-email">
+								<span class="glyphicon glyphicon-remove icon-black"></span>
+								<span class="user-email">{{this.email}}</span>
+							</span>
+						{{/if}}
+					{{/each}}
+				{{/if}}
+			</div>
+		</div>
+		<!--
+		<div id="list-properties" class="collapse out row">
+			{{> listProperties}}
+		</div>
+		-->
+	</div>
+</template>

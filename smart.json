@@ -1,0 +1,11 @@
+{
+  "packages": {
+    "spin": {},
+    "bootstrap-datepicker2": {},
+    "cron-tick": {},
+    "bootstrap-3": {},
+    "iron-router": {},
+    "accounts-ui-bootstrap-3": {},
+    "moment": {}
+  }
+}

@@ -1,0 +1,351 @@
+<template name="task">
+<div id="task_{{_id}}" class="task row">
+	<div class="row task-row-1">
+		<div class="task-move col-md-1 col-xs-1">
+			<div class="task-move-container">
+				{{#if section 'tasks'}}
+				{{#if cannotMove}}
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-up icon-white"></span>
+				{{else}}			
+					{{#if isFirstTask}}
+					<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-up icon-white" ></span>
+					{{else}}
+					<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-up icon-black"></span>
+					{{/if}}
+				{{/if}}
+			
+				{{#if cannotMove}}
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-down icon-white"></span>
+				{{else}}			
+					{{#if isLastTask}}
+					<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-down icon-white"></span>
+					{{else}}
+					<span data-task-id="{{_id}}" class="glyphicon glyphicon-arrow-down icon-black"></span>
+					{{/if}}
+				{{/if}}
+				{{/if}}
+			</div>
+		</div>
+	
+		<div data-task-id="{{_id}}" data-task-status="{{status}}" data-task-removed="{{isRemoved}}"
+			class="task-container col-md-10 col-xs-10">
+			<div class="row task-name-row">
+				<div class="col-md-9 col-sm-9 col-xs-12">
+					<div class="task-name-text">
+						{{#if cannotModify}}
+						<textarea name="task-name" type="text" wrap="off"
+							data-task-id="{{_id}}" placeholder="Please write the task name"
+							class="input-task-name" disabled="disabled">{{name}}</textarea>
+						{{else}}
+						{{#if removed}}
+						<textarea name="task-name" type="text" wrap="off"
+							data-task-id="{{_id}}" placeholder="Please write the task name"
+							class="input-task-name" disabled="disabled">{{name}}</textarea>
+						{{else}}
+						<textarea name="task-name" type="text" wrap="off"
+							data-task-id="{{_id}}" placeholder="Please write the task name"
+							class="input-task-name">{{name}}</textarea>
+						{{/if}}
+						{{/if}}
+						{{#if section 'tasksStatus'}}
+						<div class="task-list-name">{{listName}}</div>
+						{{/if}}
+						{{#if section 'tasksDate'}}
+						<div class="task-list-name">{{listName}}</div>
+						{{/if}}
+					</div>
+				</div>
+					<div class="task-icons col-md-2 col-xs-12">
+					{{#if isTaskOwner}}
+					<span class="icon-task-owner glyphicon glyphicon-user"></span>
+					{{else}}
+					<span class="icon-task-owner glyphicon glyphicon-user icon-not-set"></span>
+					{{/if}}
+					{{#if isTaskAssignee}}
+					<span class="icon-task-assignee glyphicon glyphicon-share"></span>
+					{{else}}
+					<span class="icon-task-assignee glyphicon glyphicon-share icon-not-set"></span>
+					{{/if}}
+					{{#if hasAlertDate}}
+					<span class="icon-alarm glyphicon glyphicon-bell"></span>
+					{{else}}
+					<span class="glyphicon glyphicon-bell icon-not-set"></span>
+					{{/if}}
+					{{#if hasDueDate}}
+					<span class="icon-duedate glyphicon glyphicon-calendar"></span>
+					{{else}}
+					<span class="icon-duedate glyphicon glyphicon-calendar icon-not-set"></span>
+					{{/if}}
+					{{#if hasRepeatDueDate}}
+					<span class="icon-duedate glyphicon glyphicon-repeat"></span>
+					{{else}}
+					<span class="icon-duedate glyphicon glyphicon-repeat icon-not-set"></span>
+					{{/if}}
+				</div>
+				<div class="task-chevron task-chevron-expandable col-md-1 visible-md visible-lg">
+					<span data-task-id="{{_id}}" class="glyphicon glyphicon-chevron-left icon-white"></span>
+				</div>
+				<div class="visible-sm visible-xs">
+					<div class="col-xs-1"></div>
+					<div class="task-chevron-xs task-chevron-expandable col-xs-10">
+						<span data-task-id="{{_id}}" class="glyphicon glyphicon-chevron-left icon-white"></span>
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+			</div>
+			
+			<div id="taskcontent_{{_id}}" class="collapse out task-content">
+			
+				<div class="row task-roles-row">				
+					<div class="task-roles-icons col-md-12 col-xs-12">
+						{{#if isTaskOwner}}
+							<span class="glyphicon glyphicon-user icon-black" >
+							</span><span class="descr">&nbsp;You are the owner of the task</span>
+						{{else}}
+							<span class="descr">&nbsp;{{ownerEmail}} is the owner of the task</span>
+						{{/if}}
+						{{#if isTaskAssignee}}
+							<span class="glyphicon glyphicon-share icon-black" >
+							</span><span class="descr">&nbsp;You are the assignee of the task</span>
+						{{/if}}
+					</div>
+				</div>
+	
+				<div class="row task-btn-status">
+					<div class="btn-group-status col-md-12">
+						<div class="btn-group btn-group-lg" data-toggle="buttons-radio">
+							{{#if removed}}
+								<button type="button" class="btn btn-large btn-default btn-status-later"
+									disabled="disabled">Later</button>
+								<button type="button" class="btn btn-large btn-status btn-status-soon"
+									disabled="disabled">Soon</button>
+								<button type="button" class="btn btn-large btn-status btn-status-urgent"
+									disabled="disabled">Urgent</button>
+								<button type="button" class="btn btn-large btn-status btn-status-completed"
+									disabled="disabled">Completed</button>
+							{{else}}
+								<button type="button" class="btn btn-large btn-status btn-status-later">Later</button>
+								<button type="button" class="btn btn-large btn-status btn-status-soon">Soon</button>
+								<button type="button" class="btn btn-large btn-status btn-status-urgent">Urgent</button>
+								<button type="button" class="btn btn-large btn-status btn-status-completed">
+								Completed</button>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				
+				<div class="row task-assignee-row">
+					<div class="assignee">
+						<div class="assignee-title task-option-title col-md-2 col-xs-3">
+							<span class="visible-md visible-lg">Assignee</span>
+							<span class="visible-xs visible.sm">Assignee</span>
+						</div>
+						<div class="assignee-container col-md-5 col-xs-5">
+							<select class="assignee-selector" data-assignee-id="{{assignee}}" 
+									disabled="{{removed}}">
+									<option value=""></option>
+								{{#each stakeholderEmails}}
+									<option value="{{.}}">{{.}}</option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row task-due-date-row" data-due-date-value="{{dueDate}}">
+					<div class="due-date-title task-option-title col-md-2 col-xs-3">
+						<span class="visible-md visible-lg">Due date</span>
+						<span class="visible-xs visible-sm">Due date</span>
+					</div>
+					<div class="date-container col-md-4 col-xs-9">
+						<span><i class="glyphicon glyphicon-calendar"></i></span>
+						<input type="text" class="datepicker" data-provide="datepicker"
+							data-date-format="dd/mm/yyyy" placeholder="Select a date"
+								disabled="{{removed}}" readonly>
+					</div>
+					<div class="col-xs-3 visible-xs visible-sm"></div>
+					<div class="time-container col-md-4 col-xs-9">
+						<span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+						<select class="hour-selector" disabled="{{removed}}">
+							<option value='0'>00</option><option value='1'>01</option>
+							<option value='2'>02</option><option value='3'>03</option>
+							<option value='4'>04</option><option value='5'> 05</option>
+							<option value='6'>06</option><option value='7'>07</option>
+							<option value='8'>08</option><option value='9'>09</option>
+							<option value='10'>10</option><option value='11'>11</option>
+							<option value='12'>12</option><option value='13'>13</option>
+							<option value='14'>14</option><option value='15'>15</option>
+							<option value='16'>16</option><option value='17'>17</option>
+							<option value='18'>18</option><option value='19'>19</option>
+							<option value='20'>20</option><option value='21'>21</option>
+							<option value='22'>22</option><option value='23'>23</option>
+						</select>
+						<span> : </span>
+						<select class="minutes-selector" disabled="{{removed}}">
+							<option value='0'>00</option><option value='5'>05</option>
+							<option value='10'>10</option><option value='15'>15</option>
+							<option value='20'>20</option><option value='25'>25</option>
+							<option value='30'>30</option><option value='35'>35</option>
+							<option value='40'>40</option><option value='45'>45</option>
+							<option value='50'>50</option><option value='55'>55</option>
+						</select>
+					</div>
+				</div>
+				
+					
+				
+				
+				<div class="row task-repeat-row" data-repeat-value="{{repeatDueDate}}">
+					<div class="task-option-title col-md-2 col-xs-3">
+						<span class="visible-md visible-lg"></span>
+						<span class="visible-xs visible-sm"></span>
+					</div>
+					<div class="repeat-container col-md-10 col-xs-9">
+						<span><i class="glyphicon glyphicon-repeat"></i> repeat every</span>
+						<input type="text" class="repeat-time-value" disabled="{{removed}}">
+						<select class="repeat-time-unit" disabled="{{removed}}">
+							<option value="never">never</option>
+							<option value="minutes">minutes</option>
+							<option value="hours">hours</option>
+							<option value="days">days</option>
+							<option value="weeks">weeks</option>
+							<option value="months">months</option>
+							<option value="years">years</option>
+						</select>
+					</div>
+					{{#if hasRepeatDueDate}}
+					<div class="task-option-title col-md-2 col-xs-3">
+					</div>
+					<div class="repat-next-occurrence col-md-10 col-xs-9">
+						<span>Next occurrence: {{repeatDueDate}}</span>
+					</div>
+					{{/if}}
+				</div>
+				<div class="task-duedate-buttons-row row">
+					<div class="col-md-6 visible-md visible-lg"></div>
+					<div class="duedate-buttons-btn col-md-6 visible-md visible-lg col-xs-9">
+						<button type="button" id="due-date-set" 
+							class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+							<span><i class="glyphicon glyphicon-ok-circle"></i> Set due date</span>
+						</button>
+						<button type="button" id="due-date-unset" 
+							class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+							<span><i class="glyphicon glyphicon-remove-circle"></i> Unset due date</span>
+						</button>
+					</div>
+					<div class="col-xs-3 visible-xs visible-sm"></div>
+					<div class="alarm-buttons-btn col-md-6 visible-xs visible-sm col-xs-9">
+						<button type="button" id="due-date-set" 
+							class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+							<span><i class="glyphicon glyphicon-ok-circle"></i></span>
+						</button>
+						<button type="button" id="due-date-unset" 
+							class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+							<span><i class="glyphicon glyphicon-remove-circle"></i></span>
+						</button>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row task-send-alert-row">
+					<div class="send-alert">
+						<div class="send-alert-title task-option-title col-md-2 col-xs-3">
+							<span class="visible-md visible-lg">Alert</span>
+							<span class="visible-xs visible.sm">Alert</span>
+						</div>
+						<div class="col-xs-3 visible-xs visible-sm"></div>
+						<div class="alert-options col-md-3 col-xs-9">
+							<span class="checkbox inline">
+								<input type="checkbox" class="alert-email" disabled="{{removed}}"> Email
+							</span>
+							<span class="checkbox inline">
+								<input type="checkbox" class="alert-notification" disabled="{{removed}}"> Notification
+							</span>
+						</div>
+						<div class="col-xs-3 visible-xs visible-sm"></div>
+						<div class="alert-value-before col-md-4 col-xs-9">
+							<input type="text" class="value-before" disabled="{{removed}}">
+							<select class="time-unit-before" disabled="{{removed}}">
+								<option value="minutes">minutes</option>
+								<option value="hours">hours</option>
+								<option value="days">days</option>
+								<option value="weeks">weeks</option>
+								<option value="months">months</option>
+							</select>
+							<span>before</span>
+						</div>
+					</div>
+				</div>
+					
+				<div class="row task-alarm-buttons-row">
+					<div class="alarm-buttons">
+						<div class="col-md-6 visible-md visible-lg"></div>
+						<div class="alarm-buttons-btn col-md-6 visible-md visible-lg col-xs-9">
+							<button type="button" id="alert-set" 
+								class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+								<span><i class="glyphicon glyphicon-ok-circle"></i> Set alert</span>
+							</button>
+							<button type="button" id="alert-unset" 
+								class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+								<span><i class="glyphicon glyphicon-remove-circle"></i> Unset alert</span>
+							</button>
+						</div>
+						<div class="col-xs-3 visible-xs visible-sm"></div>
+						<div class="alarm-buttons-btn col-md-6 visible-xs visible-sm col-xs-9">
+							<button type="button" id="alert-set" 
+								class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+								<span><i class="glyphicon glyphicon-ok-circle"></i></span>
+							</button>
+							<button type="button" id="alert-unset" 
+								class="btn btn-small btn-status btn-set" disabled="{{removed}}">
+								<span><i class="glyphicon glyphicon-remove-circle"></i></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row task-comments-row" data-comments-present="{{thereAreComments}}">
+					<div class="comments">
+						<div class="comments-title task-option-title col-md-2 col-xs-3">
+							<span class="visible-md visible-lg">Comments</span>
+							<span class="visible-xs visible.sm">Comments</span>
+						</div>
+						<div class="comments-content col-md-8 col-xs">
+							<textarea rows="5" cols="50"  class="comments-area" 
+								disabled="{{removed}}"></textarea>
+						</div> 
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	
+		{{#if cannotModify}}
+		<div class="task-remove col-md-1 col-xs-1">
+			<div class="task-remove-container">
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-remove icon-white"></span>
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-remove icon-white"></span>
+			</div>
+		</div>
+		{{else}}
+		{{#if removed}}
+		<div class="task-remove col-md-1 col-xs-1">
+			<div class="task-remove-container">
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-remove icon-black"></span>
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-ok remove icon-black"></span>
+			</div>
+		</div>
+		{{else}}
+		<div class="task-remove col-md-1 col-xs-1">
+			<div class="task-remove-container">
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-remove icon-black"></span>
+				<span data-task-id="{{_id}}" class="glyphicon glyphicon-ok remove icon-black"></span>
+			</div>
+		</div>
+		{{/if}}
+		{{/if}}
+	</div>
+</div>
+</template>

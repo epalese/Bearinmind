@@ -1,0 +1,183 @@
+<template name="listsDate">
+	{{> navbar }}
+	
+	{{#if currentUser}}
+	<div class="container-fluid" id="container-lists">
+		<div id="content-lists" class="">
+			<div class="">
+			
+				{{#if section 'listsDate'}}	
+				<div class="col-md-3">
+					<div class="list-tile {{todayParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=todayParams.startDate enddate=todayParams.endDate}}" 
+						data-overall-status="{{todayParams.overallStatus}}"
+						data-list-name="{{todayParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Today</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{todayParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{todayParams.assignedTasks}}</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{tomorrowParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=tomorrowParams.startDate 
+							enddate=tomorrowParams.endDate}}" 
+						data-overall-status="{{tomorrowParams.overallStatus}}"
+							data-list-name="{{tomorrowParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Tomorrow</div>
+							
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{tomorrowParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{tomorrowParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{thisWeekParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=thisWeekParams.startDate 
+							enddate=thisWeekParams.endDate}}" 
+						data-overall-status="{{thisWeekParams.overallStatus}}"
+						data-list-name="{{thisWeekParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">This week</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{thisWeekParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{thisWeekParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{nextWeekParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=nextWeekParams.startDate 
+							enddate=nextWeekParams.endDate}}" 
+						data-overall-status="{{nextWeekParams.overallStatus}}"
+						data-list-name="{{nextWeekParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Next week</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{nextWeekParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{nextWeekParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{thisMonthParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=thisMonthParams.startDate 
+							enddate=thisMonthParams.endDate}}" 
+						data-overall-status="{{thisMonthParams.overallStatus}}"
+						data-list-name="{{thisMonthParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">This month</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{thisMonthParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{thisMonthParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{nextMonthParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=nextMonthParams.startDate 
+							enddate=nextMonthParams.endDate}}" 
+						data-overall-status="{{nextMonthParams.overallStatus}}"
+						data-list-name="{{nextMonthParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Next month</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{nextMonthParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{nextMonthParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{laterParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=laterParams.startDate }}" 
+						data-overall-status="{{laterParams.overallStatus}}"
+						data-list-name="{{laterParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Later</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{laterParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{laterParams.assignedTasks}}</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="list-tile {{noduedateParams.overallStatusStyle}}"
+						data-address="{{pathFor 'listDate' startdate=noduedateParams.startDate }}" 
+						data-overall-status="{{noduedateParams.overallStatus}}"
+						data-list-name="{{noduedateParams.listName}}">
+						<div class="list-tile-content">
+							<div class="list-tile-name">No due date</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{noduedateParams.numOfTasks}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{noduedateParams.assignedTasks}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				{{/if}}
+				
+			</div>
+		</div>
+	</div>
+	{{/if}}
+</template>

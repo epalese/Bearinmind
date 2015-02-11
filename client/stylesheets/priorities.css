@@ -1,0 +1,199 @@
+.urgent-shadow {
+	/* 
+	box-shadow: 0px 0px 10px 0px rgba(255, 154, 154, 0.70) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 154, 154, 0.70) !important;
+ 	-moz-box-shadow:    0px 0px 10px 0px rgba(255, 154, 154, 0.70) !important;
+ 	 */
+	border: 1px solid rgba(255, 154, 154, 0.50);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.urgent-shadow-selected {
+	box-shadow: 0px 0px 10px 0px rgba(255, 154, 154, 1.00) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 154, 154, 1.00) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(255, 154, 154, 1.00) !important;
+	border: 1px solid rgba(255, 154, 154, 1.00) !important;
+}
+.urgent-shadow-focus {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border: solid 1px rgba(255, 154, 154, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+
+.urgent-bkg {
+	background: rgba(255, 154, 154, 0.20) !important;
+	border: 1px solid rgba(255, 154, 154, 1.00) !important;
+}
+
+.soon-shadow {
+/* 
+	box-shadow: 0px 0px 10px 0px rgba(255, 255, 154, 0.70) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 154, 0.70) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(255, 255, 154, 0.70) !important;
+ */
+	border: 1px solid rgba(255, 245, 154, 0.50);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.soon-shadow-selected {
+	box-shadow: 0px 0px 150px 0px rgba(255, 255, 154, 1.00) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 154, 1.00) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(255, 255, 154, 1.00) !important;
+	border: 1px solid rgba(255, 245, 154, 1.00) !important;
+}
+soon-shadow-focus {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border: solid 1px rgba(255, 255, 154, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.soon-bkg {
+	background: rgba(255, 245, 154, 0.20) !important;
+	border: 1px solid rgba(255, 245, 154, 1.00) !important;
+}
+
+
+.later-shadow {
+/* 
+	box-shadow: 0px 0px 10px 0px rgba(154, 255, 255, 0.70) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(154, 255, 255, 0.70) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(154, 255, 255, 0.70) !important;
+ */
+	border: 1px solid rgba(154, 255, 255, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.later-shadow-selected {
+	box-shadow: 0px 0px 10px 0px rgba(154, 255, 255, 1.00) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(154, 255, 255, 1.00) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(154, 255, 255, 1.00) !important;
+	border: 1px solid rgba(154, 255, 255, 1.00) !important;
+}
+later-shadow-focus {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border: solid 1px rgba(154, 255, 255, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.later-bkg {
+	background: rgba(154, 255, 255, 0.20) !important;
+	border: 1px solid rgba(154, 255, 255, 1.00) !important;
+}
+
+.completed-shadow {
+/* 
+	box-shadow: 0px 0px 10px 0px rgba(154, 255, 156, 0.70) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(80, 255, 80, 0.70) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(80, 255, 80, 0.70) !important;
+ */
+	border: 1px solid rgba(80, 255, 80, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.completed-shadow-selected {
+	box-shadow: 0px 0px 10px 0px rgba(80, 255, 80, 1.00) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(80, 255, 80, 1.00) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(80, 255, 80, 1.00) !important;
+	border: 1px solid rgba(80, 255, 80, 1.00) !important;
+}
+completed-shadow-focus {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border: solid 1px rgba(80, 255, 80, 1.00);
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.completed-bkg {
+	background: rgba(80, 255, 80, 0.20) !important;
+	border: 1px solid rgba(80, 255, 80, 1.00) !important;
+}
+
+.no-shadow {
+/* 
+	box-shadow: 0px 0px 10px 0px rgba(150, 150, 150, 0.70) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(150, 150, 150, 0.70) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(150, 150, 150, 0.70) !important;
+ */
+}
+.no-shadow-selected {
+	box-shadow: 0px 0px 10px 0px rgba(150, 150, 150, 1.00) !important;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(150, 150, 150, 1.00) !important;
+	-moz-box-shadow:    0px 0px 10px 0px rgba(150, 150, 150, 1.00) !important;
+}
+no-shadow-focus {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border: solid 1px rgba(150, 150, 150, 1.00) !important;
+/* 
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+ */
+}
+.no-shadow-bkg {
+	background: rgba(50, 50, 50, 0.60) !important;
+	border: 1px solid rgba(50, 50, 50, 0.60) !important;
+	opacity: 0.5;
+}
+
+.btn-status-completed {
+	background: rgba(80, 255, 80, 0.50) !important;
+/* 	border: 1px solid rgba(80, 255, 80, 1.00) !important; */
+}
+
+.btn-status-later {
+	background: rgba(154, 255, 255, 0.50) !important;
+/* 	border: 1px solid rgba(154, 255, 255, 1.00) !important; */
+}
+
+.btn-status-soon {
+	background: rgba(255, 245, 154, 0.50) !important;
+/* 	border: 1px solid rgba(255, 245, 154, 1.00) !important; */
+}
+
+.btn-status-urgent {
+	background: rgba(255, 154, 154, 0.50) !important;
+/* 	border: 1px solid rgba(255, 154, 154, 1.00) !important; */
+}

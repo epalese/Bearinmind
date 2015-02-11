@@ -1,0 +1,88 @@
+<template name="listsStatus">
+	{{> navbar }}
+	
+	{{#if currentUser}}
+	<div class="container-fluid" id="container-lists">
+		<div id="content-lists" class="">
+			<div class="">
+			
+				{{#if section 'listsStatus'}}		
+				<div class="col-md-3">
+					<div class="list-tile completed-shadow completed-bkg"
+						data-address="{{pathFor 'listStatus' status=0}}" 
+						data-overall-status="0">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Completed</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{status0}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{status0Assigned}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="list-tile later-shadow later-bkg"
+						data-address="{{pathFor 'listStatus' status=1}}"
+						data-overall-status="1">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Later</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{status1}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{status1Assigned}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="list-tile soon-shadow soon-bkg"
+						data-address="{{pathFor 'listStatus' status=2}}"
+						data-overall-status="2">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Soon</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{status2}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{status2Assigned}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="list-tile urgent-shadow urgent-bkg"
+						data-address="{{pathFor 'listStatus' status=3}}" 
+						data-overall-status="3">
+						<div class="list-tile-content">
+							<div class="list-tile-name">Urgent</div>
+
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-tasks icon-black owner"></div>
+								<div class="sharing-people">{{status3}}</div>
+							</div>
+							<div class="list-tile-sharing-icons">
+								<div class="glyphicon glyphicon-share icon-black owner" ></div>
+								<div class="sharing-people">{{status3Assigned}}</div>
+							</div>
+						</div>
+					</div>
+				</div>					
+				{{/if}}
+				
+			</div>
+		</div>
+	</div>
+	{{/if}}
+</template>

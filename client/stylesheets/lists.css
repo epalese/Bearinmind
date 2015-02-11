@@ -1,0 +1,107 @@
+/* ####### lists */
+#container-lists {
+	margin-top: 100px;
+}
+
+.list-tile {
+	margin: 10px;
+	background: white;
+	height: 200px;
+	-moz-border-radius: 1%;
+	border-radius: 1%;
+}
+
+.list-tile .list-tile-content {
+	padding: 5px;
+}
+
+.list-tile .list-tile-content .list-tile-name {
+	text-align: center;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 18px;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 120px;
+	margin-top: 10px;
+}
+
+.list-tile .list-tile-content .list-tile-user-icons {
+	width: 85%;
+	margin: auto;
+	min-height: 26px;
+
+}
+
+.list-tile .list-tile-content .glyphicon {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* 
+.list-tile .list-tile-content .list-tile-user-icons .glyphicon-user {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+ */
+
+.list-tile .list-tile-content .list-tile-user-icons .glyphicon-user.not-owner {
+	opacity: 0.3;
+}
+
+.list-tile .list-tile-content .list-tile-user-icons .owner-email {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	width: 80%;
+	font-size: 10px;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 5px;
+/* 	height: 19px; */
+	line-height: 24px;
+	padding-top: 3px;
+}
+
+.list-tile .list-tile-content .list-tile-sharing-icons {
+	width: 85%;
+	margin: auto;
+	min-height: 26px;
+}
+
+/* 
+.list-tile .list-tile-content .list-tile-sharing-icons .glyphicon-eye-open {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+ */
+
+.list-tile .list-tile-content .list-tile-sharing-icons .sharing-people {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	width: 80%;
+	font-size: 10px;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 5px;
+/* 	height: 19px; */
+	line-height: 24px;
+	padding-top: 3px;
+}

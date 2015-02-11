@@ -1,0 +1,429 @@
+/* ####### Task list */
+#container-list {
+	margin-top: 80px;
+}
+
+.list-name {
+	margin: auto;
+/* 	width: 90%; */
+	clear:right;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.list-name input {
+	margin: 0 auto;
+	width: 100%;
+	font-size: 28px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-family: Futura,"Trebuchet MS", Arial, sans-serif;
+	letter-spacing: .10em;
+	background: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+.list-name input:focus {
+	border: none !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+/* 	outline: 0 none; */
+}
+
+.list-name-icons {
+	margin: auto;
+	margin-top: 10px;
+	width: 90%;
+	clear:right;
+}
+
+.list-name-icons .descr {
+	color: lightgray;
+}
+
+.list-options-outer-container {
+	width: 90%;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+/* 
+ 	padding: 10px;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+ */
+}
+
+.list-options-inner-container {
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-top: 5px;
+}
+
+.list-options-inner-container .add-sharing {
+	margin-top: 5px;
+}
+
+.sharing-list-container #sharing-btn {
+	vertical-align: top;
+}
+
+.sharing-list {
+	margin: 10px;
+}
+
+#sharing-people .new-friend-email {
+	height: 30px;
+	vertical-align: top;
+}
+
+.sharing-list .friend-email {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.task-list {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.task-list .task {
+	margin: 0 auto;
+	min-height: 50px;
+	margin-bottom: 10px;
+}
+
+.task-list .task.expanded {
+	margin: 0 auto;
+ 	height: 379px;
+	margin-bottom: 10px;
+}
+
+.task-list .task .task-move {
+	float: left;
+	clear: left;
+	min-height: 50px;
+	padding-left: 0px;
+	padding-right: 0px;
+	z-index: 1;
+}
+
+.task-list .task .task-move .glyphicon-arrow-up {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.task-list .task .task-move .glyphicon-arrow-down {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	float: right;
+	clear: both;
+	margin-right: 5px;
+}
+
+.task-list .task .task-container {
+	margin: 0 auto;
+	margin-bottom: 10px;
+	float: left;
+	min-height: 50px;
+	padding-left: 0px;
+	padding-right: 0px;
+
+}
+
+.task-list .task .task-remove {
+	float: left;
+	min-height: 50px;
+	padding-left: 0px;
+	padding-right: 0px;	
+	z-index: 1;
+}
+
+.task-list .task .task-remove .glyphicon-remove {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.task-list .task .task-remove .glyphicon-ok {
+	margin: auto;
+	width: 14px;
+	height: 14px;
+	float: left;
+	clear: both;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+span.glyphicon-duedate {
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	margin-top: 3px;	
+}
+
+span.glyphicon-alarm {
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	margin-top: 3px;	
+}
+
+span.glyphicon-task-owner {
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	margin-top: 3px;	
+}
+
+span.glyphicon-task-assignee {
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	margin-top: 3px;	
+}
+
+span.glyphicon-chevron-left {
+	width: 14px;
+	text-align: center;
+	border-radius: 15px;
+  	position: relative;
+  	top: 30%;
+  	-webkit-transform: translateY(30%);
+  	-ms-transform: translateY(30%);
+  	transform: translateY(30%);
+}
+
+span.glyphicon-chevron-down {
+	width: 14px;
+	text-align: center;
+	border-radius: 15px;
+	position: relative;
+  	top: 30%;
+  	-webkit-transform: translateY(30%);
+  	-ms-transform: translateY(30%);
+  	transform: translateY(30%);
+}
+
+#content-list .task-list .task .task-container {
+	border: 1px solid #cccccc;
+}
+
+#content-list .task-list .task .task-container .task-container-header {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.task .task-container textarea.input-task-name {
+	resize: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background: transparent;
+	margin: 0 auto;
+ 	width: 100%;
+	font-size: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 35px;
+	line-height: 40px;
+/* 	margin-top: 3px; */
+	font-family: Verdana, "Trebuchet MS", Arial, sans-serif;
+	z-index: -1;
+}
+
+.task .task-container textarea:focus {
+	border: none !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+	outline: 0 none transparent;
+}
+
+.task .task-container .task-icons {
+  	height: 50px;
+}
+
+.task .task-container .task-icons .glyphicon {
+	margin-top: 15px;
+}
+
+.task .task-container .task-chevron-expandable {
+	height: 50px;
+	background: gray; 
+	text-align: center;
+	background: #e7e7e7;	
+}
+
+.task .task-container .task-chevron-expandable:hover {
+	background: #b7b7b7;
+}
+
+.task .task-container .task-chevron-expandable.visible-md.visible-lg {
+	left: -15px;
+}
+
+.task .task-container .task-chevron-xs {
+	height: 50px;
+	background: gray; 
+	text-align: center;
+	background: #e7e7e7;	
+}
+
+.task .task-container .task-chevron-xs:hover {
+	background: #b7b7b7;
+}
+
+
+.task .task-container #task-collapse-icon {
+	margin: 0 auto;
+	height:40%;
+	width: 10%;
+	float: right;
+}
+
+.task-content .row {
+	margin-bottom: 30px;
+}
+
+
+.btn-group-status {
+	margin: auto;
+	width: 100%;
+	text-align: center;
+}
+
+.task-roles-icons {
+	margin-top: 10px;
+}
+
+.task-roles-icons .glyphicon-user {
+	margin-left: 5px;
+}
+
+.task-roles-icons .descr {
+	color: lightgray;
+	margin-right: 10px;
+}
+
+.task-option-title span.visible-md {
+	float: right;
+	font-size: 1em;
+}
+
+.task-option-title span.visible-xs {
+	float: right;
+	font-size: 0.8em;	
+}
+
+.task-name-row .task-list-name {
+	margin-top: -5px;
+	margin-left: 5px;
+	height: 15px;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.assignee .assignee-selector {
+	width: 100%;
+}
+ 
+.due-date {
+	margin-top: 20px;
+	height: 32px;
+}
+
+.date-container input.datepicker {
+	font-size: 14px;
+	text-align: center;
+	border-radius: 0px;
+	border: 1px solid inset;
+}
+
+.due-date-title, .time-container {
+	margin-top: 4px;
+}
+
+.repeat-container input.repeat-time-value {
+	margin-bottom: 0px;
+	width: 50px;
+	text-align: center;
+}
+
+.send-alert .send-alert-title span {
+	margin-top: 15px;
+}
+
+.send-alert .alert-value-before {
+	padding-top: 15px
+}
+
+.send-alert .alert-value-before input.value-before {
+	margin-bottom: 0px;
+	width: 50px;
+	text-align: center;
+}
+
+.send-alert .alert-value-before select {
+	width: 35%;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+.alarm-buttons {
+	height: 40px;
+}
+
+.alarm-buttons .alarm-buttons-title {
+	margin-left: 10px;
+}
+
+.comments {
+	height: 130px;
+}
+
+.comments .comments-title {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.comments .comments-content textarea {
+	width: 100%;
+	height: 100px;
+}

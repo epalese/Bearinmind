@@ -1,0 +1,18 @@
+<template name="listName">
+	<div id="list_{{_id}}" data-list-id="{{_id}}" data-list-status="{{overallStatus}}" class="list-name row">
+			<input name="list-name" type="text" value="{{name}}" 
+				placeholder="Please write the list name"
+				data-list-id="{{_id}}">
+	</div>
+	
+	
+	<div class="list-name-icons row">
+		{{#if isListOwner}}
+			<span class="glyphicon glyphicon-user" ></span>
+			<span class="descr">&nbsp;You are the owner of the list</span>
+		{{else}}
+			<span class="glyphicon glyphicon-eye-open icon-black" ></span>
+			<span class="descr">&nbsp;list shared by {{ownerEmail}}</span>
+		{{/if}}
+	</div>
+</template>
